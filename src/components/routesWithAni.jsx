@@ -8,6 +8,7 @@ import { useState } from "react";
 import { auth } from "./firebase/config";
 import { useEffect } from "react";
 import { signOut } from "firebase/auth";
+import UserProfile from "./userProfile";
 
 function RoutesWithAni() {
   const [isFirstMount, setIsFirstMount] = useState(true);
@@ -71,6 +72,7 @@ function RoutesWithAni() {
         <Route path="/createpost" element={<Uploadcontent user={user} />} />
         <Route path="/post/:id" element={<Blogpost user={user} />} />
         <Route path="/login" element={<LoginPage setIsAuth={setIsAuth} />} />
+        <Route path="/userProfile" element={<UserProfile />} />
       </Routes>
     </div>
   );

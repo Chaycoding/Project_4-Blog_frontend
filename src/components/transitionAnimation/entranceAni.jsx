@@ -32,7 +32,7 @@ function EntranceAni() {
       y: 40,
     },
     animate: {
-      y: 80,
+      y: 100,
       transition: {
         duration: 1.5,
         ease: [0.87, 0, 0.13, 1],

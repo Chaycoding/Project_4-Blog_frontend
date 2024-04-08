@@ -38,9 +38,11 @@
   @keyframes colourF {
     0% {
       background-color: transparent;
+      color: white;
     }
     100% {
-      background-color: rgb(31, 41, 55);
+      background-color: white;
+      color: black;
     }
   }
   .aniRevcol {
@@ -48,10 +50,20 @@
   }
   @keyframes colourF2 {
     0% {
-      background-color: rgb(31, 41, 55);
+      background-color: white;
+      color: black;
     }
     100% {
+      color: white;
       background-color: transparent;
     }
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 12px;
+    height: 20%;
+    width: 45%;
   }
 }
