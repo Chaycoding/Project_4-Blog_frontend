@@ -43,11 +43,8 @@ function Header({ isAuth, button, user }) {
             </div>
           ) : (
             <div>
-              <button className="text-[25px]  p-2 hover:outline rounded-lg mb-4 transition-all font-semibold">
-                Join
-              </button>
               <Link to="/login">
-                <button className="text-[25px]  ml-10 hover:outline rounded-lg p-2 transition-all font-semibold">
+                <button className="text-[25px] mb-3 ml-10 hover:outline rounded-lg p-2 transition-all font-semibold">
                   Sign in
                 </button>
               </Link>

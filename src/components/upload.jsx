@@ -33,6 +33,7 @@ function Uploadcontent({ user }) {
         body: JSON.stringify({
           name: name || user.displayName,
           content: content,
+          userimage: user.photoURL,
           image: imageUrl.MainimgUrl,
           thumbnailImg: imageUrl.ThumbimgUrl,
           email: email || user.email,
@@ -46,6 +47,7 @@ function Uploadcontent({ user }) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               name: name || user.displayName,
+              userimage: user.photoURL,
               thumbnailImg: imageUrl.ThumbimgUrl,
               title: title,
               id: json["ID"],
@@ -77,6 +79,7 @@ function Uploadcontent({ user }) {
         <p className="col-span-2 text-[2.7rem] ">Author details</p>
         <hr />
         <span />
+
         <label htmlFor="name">What's your name?</label>
         <input
           className="border border-[#237477]  rounded-3xl pl-5"

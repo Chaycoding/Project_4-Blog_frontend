@@ -37,22 +37,22 @@ function Newestposts() {
 
   const content =
     loading == true ? (
-      <div className="px-20">
-        <div className="grid grid-cols-3">
+      <div className="px-10">
+        <div className="grid grid-cols-3 gap-x-10">
           <div className="col-span-2 content-center grid transition-all">
             <Link
               className="hover:cursor-pointer h-full"
               to={`/post/${firstpost[0].id}`}
             >
-              <div>
+              <div className="bg-black rounded-md">
                 <img
-                  className="h-96 rounded-md w-[95%]"
+                  className="h-96 rounded-md w-full   transition-all duration-200 hover:opacity-80"
                   loading="lazy"
                   src={firstpost[0].thumbnailImg || img}
                   alt="Something went wrong"
                 ></img>
               </div>
-              <div className="flex flex-col mt-4 mr-12">
+              <div className="flex flex-col mt-2 ">
                 <div className="flex  items-center justify-end">
                   <p className="text-lg pr-2">By {firstpost[0].name}</p>
                   <img
@@ -62,9 +62,7 @@ function Newestposts() {
                     className="rounded-full h-7 w-7"
                   />
                 </div>
-                <p className="text-2xl font-semibold mt-5 ">
-                  {firstpost[0].title}
-                </p>
+                <p className="text-2xl font-semibold ">{firstpost[0].title}</p>
               </div>
             </Link>
           </div>
@@ -110,15 +108,15 @@ function Newestposts() {
           </div>
         </div>
 
-        <div>
+        <div className="mt-40 grid grid-cols-3 gap-x-10 gap-y-32">
           {data.map((x) => {
             const link = `/post/${x.id}`;
             return (
               <div className=" transition-all  rounded-lg " key={x._id}>
                 <Link className="hover:cursor-pointer " to={link}>
-                  <div className="bg-black  rounded-md">
+                  <div className="bg-black h-56 rounded-md">
                     <img
-                      className=" rounded-md  transition-all duration-200 hover:opacity-80"
+                      className=" rounded-md h-full w-full transition-all duration-200 hover:opacity-80"
                       loading="lazy"
                       src={x.thumbnailImg || img}
                       alt="Something went wrong"
@@ -129,13 +127,13 @@ function Newestposts() {
                     <div className="flex w-full items-center justify-end">
                       <p className="text-sm pr-2">By {x.name}</p>
                       <img
-                        src={"https://picsum.photos/20"}
+                        src={x.userimage}
                         alt=""
                         loading="lazy"
                         className="rounded-full  h-5 w-5"
                       />
                     </div>
-                    <p className="text-lg font-semibold ml-2 ">{x.title}</p>
+                    <p className="text-xl font-bold ml-2 ">{x.title}</p>
                   </div>
                 </Link>
               </div>

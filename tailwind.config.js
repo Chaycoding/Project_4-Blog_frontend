@@ -6,6 +6,7 @@ export default {
       backgroundImage: {
         balloons: `url(/src/components/images/high quality/bal.webp)`,
         tower: `url(/src/components/images/high quality/thatimg.webp)`,
+        loginn: `url(/src/components/images/high quality/login.webp)`,
       },
     },
   },
