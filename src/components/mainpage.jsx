@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 
 const Newestposts = React.lazy(() => import("./newestPosts"));
 
-function Mainpage({ isAuth, isFirstMount, user }) {
+function Mainpage({ isAuth, isFirstMount, user, dark }) {
+  const darkcheck = dark ? "bg-[#121212] text-white" : "bg-white text-black";
+  const darkstyle = `-mt-[5rem] pb-[150rem] ${darkcheck}`;
   return (
-    <div className=" -mt-[5rem] pb-[150rem]">
+    <div className={darkstyle}>
       {isFirstMount ? <EntranceAni /> : <PageSwitchAni />}
       <div className="h-[100rem]">
         <div className="bg-balloons bg-cover bg-center">

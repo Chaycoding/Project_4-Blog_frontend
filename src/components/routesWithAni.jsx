@@ -9,10 +9,12 @@ import { auth } from "./firebase/config";
 import { useEffect } from "react";
 import { signOut } from "firebase/auth";
 import UserProfile from "./userProfile";
+import Footer from "./footer";
 
 function RoutesWithAni() {
   const [isFirstMount, setIsFirstMount] = useState(true);
   const [isAuth, setIsAuth] = useState(null);
+  const [dark, setDark] = useState(false);
   const [user, setUser] = useState({
     displayName: (
       <div>
@@ -56,7 +58,7 @@ function RoutesWithAni() {
 
   return (
     <div>
-      <Header isAuth={isAuth} button={signUserOut} user={user} />
+      <Header isAuth={isAuth} button={signUserOut} user={user} dark={dark} />
       <Routes location={location} key={location.key}>
         <Route
           path="/"
@@ -64,16 +66,21 @@ function RoutesWithAni() {
             <Mainpage
               isAuth={isAuth}
               setIsAuth={setIsAuth}
+              dark={dark}
               isFirstMount={isFirstMount}
               user={user}
             />
           }
         />
         <Route path="/createpost" element={<Uploadcontent user={user} />} />
-        <Route path="/post/:id" element={<Blogpost user={user} />} />
+        <Route
+          path="/post/:id"
+          element={<Blogpost dark={dark} setDark={setDark} />}
+        />
         <Route path="/login" element={<LoginPage setIsAuth={setIsAuth} />} />
         <Route path="/userProfile" element={<UserProfile />} />
       </Routes>
+      <Footer dark={dark} />
     </div>
   );
 }
