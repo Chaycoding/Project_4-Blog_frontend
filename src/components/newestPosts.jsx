@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import img from "./images/high quality/bal.webp";
-// import Game from "./thegame";
+import Game from "./thegame";
 import { useEffect, useState } from "react";
 
 function Newestposts() {
@@ -143,16 +143,16 @@ function Newestposts() {
         </div>
       </div>
     ) : (
-      <div>
-        <div class="flex space-x-2 justify-center items-center bg-white h-screen dark:invert">
-          <span class="sr-only">Loading...</span>
-          <div class="h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.075s]"></div>
-          <div class="h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.037s]"></div>
-          <div class="h-8 w-8 bg-black rounded-full animate-bounce"></div>
+      <div className="flex  flex-col items-center">
+        <span className="text-3xl">Loading... Enjoy a game while you wait</span>
+        <div class="flex space-x-2 justify-center items-center bg-white h-20 dark:invert">
+          <div class="h-3 w-3 bg-black rounded-full animate-bounce [animation-delay:-0.075s]"></div>
+          <div class="h-3 w-3 bg-black rounded-full animate-bounce [animation-delay:-0.037s]"></div>
+          <div class="h-3 w-3 bg-black rounded-full animate-bounce"></div>
         </div>
+        <Game />;
       </div>
     );
-  // <Game />;
 
   return <div>{content}</div>;
 }

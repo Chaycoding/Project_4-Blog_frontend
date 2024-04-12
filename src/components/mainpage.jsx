@@ -3,16 +3,15 @@ import React from "react";
 import EntranceAni from "./transitionAnimation/entranceAni";
 import PageSwitchAni from "./transitionAnimation/pageAni";
 import { motion } from "framer-motion";
-import Game from "./thegame";
 const Newestposts = React.lazy(() => import("./newestPosts"));
 
 function Mainpage({ isAuth, isFirstMount, user, dark }) {
   const darkcheck = dark ? "bg-[#121212] text-white" : "bg-white text-black";
   const darkstyle = `-mt-[5rem] pb-[150rem] ${darkcheck}`;
   const darkcheck1 = dark
-    ? "bg-black text-white hover:text-black hover:bg-white"
-    : "bg-white hover:bg-black text-black hover:text-white";
-  const darkstyle1 = ` font-semibold hover:cursor-pointer   transition-all duration-[200ms] hover:outline outline-2 outline-white rounded-xl text-2xl px-10 p-2 mr-10 ${darkcheck1}`;
+    ? "bg-black border-white text-white hover:text-black hover:bg-white"
+    : "bg-white border-black hover:bg-black text-black hover:text-white";
+  const darkstyle1 = ` font-semibold hover:cursor-pointer   transition-all duration-[200ms] border  rounded-xl text-2xl px-10 p-2 mr-10 ${darkcheck1}`;
   return (
     <div className={darkstyle}>
       {isFirstMount ? <EntranceAni /> : <PageSwitchAni />}
@@ -34,6 +33,11 @@ function Mainpage({ isAuth, isFirstMount, user, dark }) {
                 Create post
               </motion.button>
             </Link>
+            <Link to="/game">
+              <motion.button whileHover={{ scale: 1.1 }} className={darkstyle1}>
+                Play a game!
+              </motion.button>
+            </Link>
           </div>
         )}
         <div className="mt-7 ">
@@ -42,7 +46,6 @@ function Mainpage({ isAuth, isFirstMount, user, dark }) {
         <div className="flex mt-10">
           <Newestposts />
         </div>
-        <Game />
       </div>
     </div>
   );

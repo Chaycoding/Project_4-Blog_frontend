@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { signOut } from "firebase/auth";
 import UserProfile from "./userProfile";
 import Footer from "./footer";
+import Gamepage from "./game";
 
 function RoutesWithAni() {
   const [isFirstMount, setIsFirstMount] = useState(true);
@@ -79,6 +80,7 @@ function RoutesWithAni() {
         />
         <Route path="/login" element={<LoginPage setIsAuth={setIsAuth} />} />
         <Route path="/userProfiledesdsf" element={<UserProfile />} />
+        <Route path="/game" element={<Gamepage />} />
       </Routes>
       <Footer dark={dark} />
     </div>

@@ -530,8 +530,8 @@ function Game() {
 
   return (
     <div>
+      <div id="score"></div>
       <div className="container">
-        <div id="score"></div>
         <canvas id="game" ref={canvaz} width="375" height="375"></canvas>
         <div id="introduction">Hold down the mouse to stretch out a stick</div>
         <div id="perfect">DOUBLE SCORE</div>
