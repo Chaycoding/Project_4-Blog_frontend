@@ -7,7 +7,9 @@ import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
 function Blogpost({ dark, setDark }) {
   const url = window.location.href;
   const id = url.substring(url.lastIndexOf("/") + 1);
-  const { data } = useFetchBlogs(`http://localhost:5000/api/v1/${id}`);
+  const { data } = useFetchBlogs(
+    `https://project-4-blogsite-backend-1.onrender.com/api/v1/${id}`
+  );
 
   const [contentlisttt] = useState([]);
 

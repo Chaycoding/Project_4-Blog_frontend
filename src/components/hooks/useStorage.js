@@ -8,7 +8,7 @@ const useStorage = (file, userName) => {
     formData.append("file", file);
     formData.append("userName", userName);
 
-    fetch("http://localhost:5000/api/v1/upload", {
+    fetch("https://project-4-blogsite-backend-1.onrender.com/api/v1/upload", {
       method: "POST",
       body: formData,
     }).then((data) => {

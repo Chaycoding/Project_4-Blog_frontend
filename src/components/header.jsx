@@ -37,7 +37,7 @@ function Header({ isAuth, button, user, dark }) {
                 referrerPolicy="no-referrer"
                 className="rounded-full h-10 mt-3 mr-3 w-10 "
               />
-              <Link to="/userProfile">
+              <Link to="/userProfiledesdsf">
                 <button className="text-[25px] mt-3  pr-5">
                   {user.displayName}
                 </button>

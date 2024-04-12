@@ -78,7 +78,7 @@ function RoutesWithAni() {
           element={<Blogpost dark={dark} setDark={setDark} />}
         />
         <Route path="/login" element={<LoginPage setIsAuth={setIsAuth} />} />
-        <Route path="/userProfile" element={<UserProfile />} />
+        <Route path="/userProfiledesdsf" element={<UserProfile />} />
       </Routes>
       <Footer dark={dark} />
     </div>

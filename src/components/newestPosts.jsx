@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import img from "./images/high quality/bal.webp";
-
+// import Game from "./thegame";
 import { useEffect, useState } from "react";
 
 function Newestposts() {
@@ -10,7 +10,9 @@ function Newestposts() {
   const [stat, setStat] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/blogOverview")
+    fetch(
+      "https://project-4-blogsite-backend-1.onrender.com/api/v1/blogOverview"
+    )
       .then((res) => res.json())
       .then((json) => {
         let inter = json["blogs"];
@@ -56,7 +58,7 @@ function Newestposts() {
                 <div className="flex  items-center justify-end">
                   <p className="text-lg pr-2">By {firstpost[0].name}</p>
                   <img
-                    src={"https://picsum.photos/20"}
+                    src={firstpost[0].userimage}
                     alt=""
                     loading="lazy"
                     className="rounded-full h-7 w-7"
@@ -107,7 +109,6 @@ function Newestposts() {
             </Link>
           </div>
         </div>
-
         <div className="mt-40 grid grid-cols-3 gap-x-10 gap-y-32">
           {data.map((x) => {
             const link = `/post/${x.id}`;
@@ -142,8 +143,16 @@ function Newestposts() {
         </div>
       </div>
     ) : (
-      <h1 className="text-center mt-28 text-6xl">Loading..</h1>
+      <div>
+        <div class="flex space-x-2 justify-center items-center bg-white h-screen dark:invert">
+          <span class="sr-only">Loading...</span>
+          <div class="h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.075s]"></div>
+          <div class="h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.037s]"></div>
+          <div class="h-8 w-8 bg-black rounded-full animate-bounce"></div>
+        </div>
+      </div>
     );
+  // <Game />;
 
   return <div>{content}</div>;
 }
