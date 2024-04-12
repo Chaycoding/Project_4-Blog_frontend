@@ -11,5 +11,5 @@ export default defineConfig({
       include: ["./src/**/*.jsx", "./src/**/*.js"],
     }),
   ],
-  server: { port: 3000 },
+  base: "/Project_4-Blog_frontend/",
 });
