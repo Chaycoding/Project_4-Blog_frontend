@@ -76,7 +76,7 @@ function RoutesWithAni() {
         <Route path="/createpost" element={<Uploadcontent user={user} />} />
         <Route
           path="/post/:id"
-          element={<Blogpost dark={dark} setDark={setDark} />}
+          element={<Blogpost dark={dark} setDark={setDark} user={user} />}
         />
         <Route path="/login" element={<LoginPage setIsAuth={setIsAuth} />} />
         <Route path="/userProfiledesdsf" element={<UserProfile />} />

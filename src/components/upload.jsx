@@ -142,12 +142,7 @@ function Uploadcontent({ user }) {
                   userName={user.displayName}
                 />
               )}
-              {imageUrl && (
-                <h1>
-                  Everything's ready{" "}
-                  {imageUrl.MainimgUrl + imageUrl.ThumbimgUrl}
-                </h1>
-              )}
+              {imageUrl && <h1>Everything's ready </h1>}
 
               <button className="hover:bg-black hover:text-white text-4xl col-span-2 border border-white hover:border-transparent transition-all duration-[300ms] rounded-r-3xl rounded-l-3xl py-2 px-4 pb-[12px]">
                 Submit
