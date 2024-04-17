@@ -73,7 +73,8 @@ function Uploadcontent({ user }) {
     <div className=" mt-20">
       <PageSwitchAni />
       {user ? (
-        user.displayName == "Geralt Gurusinghe" ? (
+        user.displayName == "Geralt Gurusinghe" ||
+        user.displayName == "Ashika Shenali" ? (
           <div>
             <h1 className="text-center text-6xl pb-28">Make your own blog</h1>
             <form
