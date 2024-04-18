@@ -40,10 +40,10 @@ function Editcontent({ user, seteditcheck, editcheck, data, id }) {
       id: id,
     };
     if (imageUrl) {
-      dicone[image] = imageUrl.MainimgUrl;
-      dicone[thumbnailImg] = imageUrl.ThumbimgUrl;
+      dicone["image"] = imageUrl.MainimgUrl;
+      dicone["thumbnailImg"] = imageUrl.ThumbimgUrl;
 
-      dictwo[thumbnailImg] = imageUrl.ThumbimgUrl;
+      dictwo["thumbnailImg"] = imageUrl.ThumbimgUrl;
     }
 
     fetch(`https://project-4-blogsite-backend-1.onrender.com/api/v1/${id}`, {
