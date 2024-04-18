@@ -44,7 +44,7 @@ function Editcontent({ user, seteditcheck, editcheck, data, id }) {
         image: imageUrl.MainimgUrl,
         thumbnailImg: imageUrl.ThumbimgUrl,
       });
-      dictwo.pus({
+      dictwo.push({
         thumbnailImg: imageUrl.ThumbimgUrl,
       });
     }
