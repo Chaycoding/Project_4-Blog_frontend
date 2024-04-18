@@ -27,7 +27,6 @@ function Editcontent({ user, seteditcheck, editcheck, data, id }) {
 
   const submit = (e) => {
     e.preventDefault();
-    let titledel = data.title;
     let dicone = {
       name: name || user.displayName,
       content: content,
@@ -58,7 +57,7 @@ function Editcontent({ user, seteditcheck, editcheck, data, id }) {
       .then((res) => res.json())
       .then((json) =>
         fetch(
-          `https://project-4-blogsite-backend-1.onrender.com/api/v1/thumb/${titledel}`,
+          `https://project-4-blogsite-backend-1.onrender.com/api/v1/thumb/${id}`,
           {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
