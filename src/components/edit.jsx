@@ -13,7 +13,7 @@ function Editcontent({ user, seteditcheck, editcheck, data, id }) {
   const [content, setContent] = useState(data.content);
   const [files, setFiles] = useState(null);
   const [imgurl, setimgurl] = useState({ mainImg: null, thumbnailImg: null });
-  const [imageUrl, setImageUrl] = useState(null);
+  const [imageUrl, setImageUrl] = useState(false);
 
   const MainimgUrl = useRetrieveUrl(imgurl.mainImg);
   const ThumbimgUrl = useRetrieveUrl(imgurl.thumbnailImg);
